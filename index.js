@@ -18,21 +18,19 @@ const db = mysql.createConnection({
 db.connect((err) => {
     if (err) {
 	console.error('Error: ', err.message);
-	res.send('ERROR WHILE INPUTTED INFO! CHECK CONSOLE OR CONTACT ADMIN');
+	res.send('ERROR WHILE INPUTTING INFO! CHECK CONSOLE OR CONTACT ADMIN');
     }
 });
 
 app.post('/submit', (req, res) => {
     const data = req.body;
 
-    const sql = `INSERT INTO patients (name, age, address, gender, employment, status, history, complaint, labs, imaging, medications, radiology, endoscopy, echo, kardex, bloodType, nextPlan, nextDate)
+    const sql = `INSERT INTO patients (name, age, address, gender, employment, status, history, complaint, labs, imaging, medications, endoscopy, echo, nextPlan, nextDate)
                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
     const values = [
         data.name, data.age, data.address, data.gender, data.employment, data.status,
-        data.history, data.complaint, data.labs, data.imaging, data.medications,
-        data.radiology, data.endoscopy, data.echo, data.kardex, data.bloodType,
-        data.nextPlan, data.nextDate
+        data.history, data.complaint, data.labs, data.imaging, data.medications, data.endoscopy, data.echo, data.nextPlan, data.nextDate
     ];
 
     db.query(sql, values, (err, result) => {
