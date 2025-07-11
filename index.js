@@ -26,7 +26,7 @@ app.post('/submit', (req, res) => {
     const data = req.body;
 
     const sql = `INSERT INTO patients (name, age, address, gender, employment, status, history, complaint, labs, imaging, medications, endoscopy, echo, nextPlan, nextDate)
-               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
     const values = [
         data.name, data.age, data.address, data.gender, data.employment, data.status,
