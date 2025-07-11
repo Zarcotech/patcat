@@ -16,11 +16,8 @@ fetch('/patients')
         <td>${patient.labs}</td>
         <td>${patient.imaging}</td>
         <td>${patient.medications}</td>
-        // <td>${patient.radiology}</td>
         <td>${patient.endoscopy}</td>
         <td>${patient.echo}</td>
-        // <td>${patient.kardex}</td>
-        // <td>${patient.bloodType}</td>
         <td>${patient.nextPlan}</td>
         <td>${patient.nextDate}</td>
       `;
